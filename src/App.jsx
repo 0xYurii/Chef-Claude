@@ -8,12 +8,12 @@ export default function App() {
   const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
 
   function addFavoriteThing() {
-    /**
-     * Challenge: you do it!
-     * Every time "Add item" is clicked, it should add another string
-     * "Test" to the list on the page
-     */
-    setMyFavoriteThings(prev =>[...prev, "test"])
+    setMyFavoriteThings(
+      prev =>[
+        ...prev,
+        allFavoriteThings[prev.length]
+      ]
+    )
   }
   
   return (
