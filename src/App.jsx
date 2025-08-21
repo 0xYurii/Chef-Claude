@@ -1,13 +1,17 @@
-import React from "react"
-
+import { useState } from "react";
 export default function App() {
-    let [num,setNum]=React.useState(0)
-    function Increase(){
-      setNum(num+1)
-    }
-    function Decrease(){
-      setNum(num-1)
-    }
+  const [num,setNum]=useState(0)
+  
+  function Increase(){
+    setNum(function(){
+      return num+1
+    })
+  }
+  function Decrease(){
+    setNum(function(){
+      return num-1
+    })
+  }
     return (
         <main className="container">
             <h1>How many times will Bob say "state" in this section?</h1>
