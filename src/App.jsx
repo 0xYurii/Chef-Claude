@@ -1,18 +1,27 @@
-
-import {useState } from "react"
+import React from "react"
 
 export default function App() {
-    const [status, setStatus]=useState(false);
+  const [myFavoriteThings, setMyFavoriteThings] = React.useState([])
+  
+  const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
+  "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
 
-
-    return (
-        <main>
-            <h1 className="title">Do I feel like going out tonight?</h1>
-            <button
-              className="value" 
-              onClick={()=>{setStatus(!status)}}
-            
-            > {status ? "yes":"no"} </button>
-        </main>
-    )
+  function addFavoriteThing() {
+    /**
+     * Challenge: you do it!
+     * Every time "Add item" is clicked, it should add another string
+     * "Test" to the list on the page
+     */
+    setMyFavoriteThings(prev =>[...prev, "test"])
+  }
+  
+  return (
+    <main>
+      <button onClick={addFavoriteThing}>Add item</button>
+      <section aria-live="polite">
+        {thingsElements}
+      </section>
+    </main>
+  )
 }
