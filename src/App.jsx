@@ -1,29 +1,35 @@
 import React from "react"
 
 export default function App() {
-    let [isImportant, setIsImportant] = React.useState("Yes")
-    /**
-     * Challenge: 
-     * 1. Create a function called `handleClick` that runs
-     *    setIsImportant("Definitely")
-     * 2. Add a click event listener to the button
-     *    that runs `handleClick` when the button is clicked.
-     */
-    function handleClick(){
-      setIsImportant("Definitely")
+    let [num,setNum]=React.useState(0)
+    function Increase(){
+      setNum(num+1)
     }
-    
+    function Decrease(){
+      setNum(num-1)
+    }
     return (
-        <main>
-            <h1 className="title">Is state important to know?</h1>
-            <button
-              className="value"
-              onClick={handleClick}
-             
-             >{isImportant}</button>
+        <main className="container">
+            <h1>How many times will Bob say "state" in this section?</h1>
+            <div className="counter">
+                <button
+                  className="minus" 
+                  aria-label="Decrease count"
+                  onClick={Decrease}
+                >–</button>
+
+                <h2 className="count">{num}</h2>
+
+                <button
+                  className="plus" 
+                  aria-label="Increase count"
+                  onClick={Increase}
+                >+</button>
+            </div>
         </main>
     )
 }
+
 
 
 
