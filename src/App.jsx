@@ -9,11 +9,11 @@ export default function App() {
         lastName: "Doe",
         phone: "+1 (212) 555-1212",
         email: "itsmyrealname@example.com",
-        isFavorite: true
+        isFavorite: false
     })
 
     let staricon=contact.isFavorite ? starFilled : starEmpty 
-    
+
     function toggleFavorite() {
         setContact(prev=>{
           return{
