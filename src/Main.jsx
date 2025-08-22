@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export default function Main() {
 
-    const [ingredients,setIngredients] = useState(["Chicken", "Oregano", "Tomatoes"])
+    const [ingredients,setIngredients] = useState([])
 
     const ingredientsListItems = ingredients.map(ingredient => (
         <li key={ingredient}>{ingredient}</li>
