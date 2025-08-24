@@ -76,7 +76,7 @@ ul.ingredients-list > li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 8px;
+    border-radius:8px;
     background: #F0EFEB;
     padding: 10px 28px;
 }

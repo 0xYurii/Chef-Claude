@@ -30,7 +30,7 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-            <section>
+            {ingredients.length>0 &&<section>
                 <h2>Ingredients on hand:</h2>
                 <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
                 <div className="get-recipe-container">
@@ -40,7 +40,7 @@ export default function Main() {
                     </div>
                     <button>Get a recipe</button>
                 </div>
-            </section>
+            </section>}
         </main>
     )
 }
