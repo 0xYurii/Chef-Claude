@@ -1,49 +1,52 @@
-/**
- * App.jsx
- * Main application component that renders a simple counter interface.
- * Features:
- * - State management for count value using React.useState
- * - Increment/decrement functionality via button clicks
- * - Accessibility labels for screen readers
- * - Responsive layout with container styling
- * - Reusable Count component for displaying the current value
- */
-
 import React from "react"
-import Count from './Count'
+import avatar from "../images/user.png"
+import Star from "./Star"
+
+
 export default function App() {
-    const [count, setCount] = React.useState(0)
+    const [contact, setContact] = React.useState({
+        firstName: "John",
+        lastName: "Doe",
+        phone: "+1 (212) 555-1212",
+        email: "itsmyrealname@example.com",
+        isFavorite: false
+    })
+    
 
-    function add() {
-        setCount(prevCount => prevCount + 1)
-    }
-
-    function subtract() {
-        setCount(prevCount => prevCount - 1)
+    function toggleFavorite() {
+        setContact(prevContact => ({
+            ...prevContact,
+            isFavorite: !prevContact.isFavorite
+        }))
     }
     
 
-
     return (
-        <main className="container">
-            <div className="counter">
-                <button
-                    className="minus"
-                    onClick={subtract}
-                    aria-label="Decrease count"
-                >-</button>
-
-                
-                <Count
-                  number={count}
+        <main>
+            <article className="card">
+                <img
+                    src={avatar}
+                    className="avatar"
+                    alt="User profile picture of John Doe"
                 />
+                <div className="info">
+                    <button
+                        aria-pressed={contact.isFavorite}
+                        aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
+                        className="favorite-button"
+                    >
+                        <Star
+                            isFilled={contact.isFavorite}
+                        />
+                    </button>
+                    <h2 className="name">
+                        {contact.firstName} {contact.lastName}
+                    </h2>
+                    <p className="contact">{contact.phone}</p>
+                    <p className="contact">{contact.email}</p>
+                </div>
 
-                <button
-                    className="plus"
-                    onClick={add}
-                    aria-label="Increase count"
-                >+</button>
-            </div>
+            </article>
         </main>
     )
 }
