@@ -3,4 +3,4 @@ import App from "./App"
 
 ReactDOM
     .createRoot(document.getElementById('root'))
-    .render(<App darkMode={false} />);
+    .render(<App />);
