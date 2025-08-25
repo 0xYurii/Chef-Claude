@@ -1,5 +1,5 @@
-export default function Count({ number }) {
+export default function Count(props) {
     return (
-        <h2 className="count">{number}</h2>
+        <h2 className="count">{props.number}</h2>
     )
 }

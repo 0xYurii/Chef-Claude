@@ -1,3 +1,14 @@
+/**
+ * App.jsx
+ * Main application component that renders a simple counter interface.
+ * Features:
+ * - State management for count value using React.useState
+ * - Increment/decrement functionality via button clicks
+ * - Accessibility labels for screen readers
+ * - Responsive layout with container styling
+ * - Reusable Count component for displaying the current value
+ */
+
 import React from "react"
 import Count from './Count'
 export default function App() {
