@@ -34,6 +34,7 @@ export default function App() {
                         aria-pressed={contact.isFavorite}
                         aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
                         className="favorite-button"
+                        onClick={toggleFavorite}
                     >
                         <Star
                             isFilled={contact.isFavorite}
