@@ -1,17 +1,13 @@
-
-import { useState } from "react"
+import React from "react"
 
 export default function Pad(props) {
-    const [turn,setTurn]=useState(false)
-    function turneOn(){
-        setTurn(prev=>!prev)
-        
-    }
+    const [on, setOn] = React.useState(props.on)
+    
     return (
         <button 
             style={{backgroundColor: props.color}}
-            onClick={turneOn}
-            className={turn?"on":""}
+            className={on ? "on" : undefined}
+            onClick={() => props.toggle(props.id)}
         ></button>
     )
 }
