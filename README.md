@@ -2,7 +2,7 @@
 
 Chef Claude is a smart recipe assistant that helps you discover delicious meals you can make with the ingredients you already have. Simply list your ingredients, and our AI-powered chef will whip up a creative recipe for you!
 
-![Chef Claude Preview](https://raw.githubusercontent.com/0xYurii/Chef-Claude/main/images/screenShot.png)
+![Chef Claude Preview](/src/images/screenShot.png)
 
 ## ✨ Features
 
