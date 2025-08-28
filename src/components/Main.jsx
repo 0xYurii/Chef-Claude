@@ -10,8 +10,11 @@ export default function Main() {
     const [recipe, setRecipe] = React.useState("")
     const recipeSection = React.useRef(null)
     console.log(recipeSection)
+
     React.useEffect(()=>{
-        if(recipe && recipeSection.current){recipeSection.current.scrollIntoView()}
+        if(recipe && recipeSection.current){
+            recipeSection.current.scrollIntoView({behavior: "smooth"})
+        }
     },[recipe])
 
     async function getRecipe() {
