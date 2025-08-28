@@ -1,5 +1,3 @@
-
-
 import React from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
@@ -12,7 +10,9 @@ export default function Main() {
     const [recipe, setRecipe] = React.useState("")
     const recipeSection = React.useRef(null)
     console.log(recipeSection)
-    
+    React.useEffect(()=>{
+        if(recipe && recipeSection.current){recipeSection.current.scrollIntoView()}
+    },[recipe])
 
     async function getRecipe() {
         const recipeMarkdown = await generateRecipe(ingredients)
